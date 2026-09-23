@@ -21,12 +21,38 @@ const fields = [
 export function Contact() {
   const [submitted, setSubmitted] = useState(false)
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault()
-    // No backend configured yet — surface a friendly confirmation.
-    // Wire this up to an email service or database when ready.
-    setSubmitted(true)
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  e.preventDefault()
+
+  const form = e.currentTarget
+  const formData = new FormData(form)
+
+  formData.append('access_key', '46c26727-c27e-40fa-bd71-f016724b9ab7')
+  formData.append('subject', 'New NRK STONES Website Enquiry')
+  formData.append('from_name', 'NRK STONES Website')
+
+  try {
+    const response = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+      body: JSON.stringify(Object.fromEntries(formData)),
+    })
+
+    const result = await response.json()
+
+    if (result.success) {
+      form.reset()
+      setSubmitted(true)
+    } else {
+      alert(result.message || 'Unable to send enquiry. Please try again.')
+    }
+  } catch {
+    alert('Unable to send enquiry. Please check your internet connection and try again.')
   }
+}
 
   return (
     <section
