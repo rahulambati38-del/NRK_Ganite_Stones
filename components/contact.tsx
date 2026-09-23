@@ -21,7 +21,7 @@ const fields = [
 export function Contact() {
   const [submitted, setSubmitted] = useState(false)
 
-  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+ async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
   e.preventDefault()
 
   const form = e.currentTarget
@@ -43,14 +43,21 @@ export function Contact() {
 
     const result = await response.json()
 
-    if (result.success) {
+    console.log('Web3Forms response:', result)
+
+    if (response.ok && result.success) {
       form.reset()
       setSubmitted(true)
     } else {
-      alert(result.message || 'Unable to send enquiry. Please try again.')
+      alert(
+        `Web3Forms Error: ${
+          result.message || 'The enquiry could not be sent.'
+        }`
+      )
     }
-  } catch {
-    alert('Unable to send enquiry. Please check your internet connection and try again.')
+  } catch (error) {
+    console.error('Submission error:', error)
+    alert('Unable to connect to the enquiry service. Please try again.')
   }
 }
 
