@@ -8,7 +8,7 @@ import { Mail, MessageCircle } from 'lucide-react'
 
 const fields = [
   { name: 'name', label: 'Name', type: 'text', required: true },
-  { name: 'phone', label: 'Phone', type: 'tel', required: true },
+  { name: 'phone', label: 'Phone', type: 'tel', required: true, pattern: '[0-9]{10}', minLength: 10, maxLength: 10 },
   { name: 'email', label: 'Email', type: 'email', required: false },
   { name: 'projectType', label: 'Project Type', type: 'text', required: true },
   {
@@ -145,6 +145,9 @@ export function Contact() {
                       name={field.name}
                       type={field.type}
                       required={field.required}
+                      pattern={field.name === 'phone' ? '[0-9]{10}' : undefined}
+                      minLength={field.name === 'phone' ? 10 : undefined}
+                      maxLength={field.name === 'phone' ? 10 : undefined}
                       placeholder=" "
                       className="peer w-full border-b border-ivory/20 bg-transparent pb-2 pt-6 text-ivory outline-none transition-colors focus:border-bronze"
                     />
