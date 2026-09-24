@@ -95,12 +95,21 @@ export function Contact() {
                 {business.address[4]}
               </p>
               {/* Contact details are placeholders until provided. */}
-              <p className="text-ivory/40">
-                {business.phone || 'Phone — to be added'}
-              </p>
-              <p className="text-ivory/40">
-                {business.email || 'Email — to be added'}
-              </p>
+              <a
+                href={`https://wa.me/${business.phone.replace(/\D/g, '')}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block text-ivory/40 transition-colors hover:text-bronze"
+              >
+              {business.phone || 'Phone — to be added'}
+              </a>
+
+              <a
+                href={`mailto:${business.email}`}
+                className="block text-ivory/40 transition-colors hover:text-bronze"
+              >
+              {business.email || 'Email — to be added'}
+              </a>
             </div>
           </Reveal>
         </div>
