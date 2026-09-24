@@ -91,10 +91,15 @@ export function Contact() {
 
           <Reveal delay={0.3}>
             <div className="mt-10 space-y-3 text-sm text-ivory/60">
-              <p>
+              <a
+                href={business.mapsUrl || '#location'}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block text-ivory/60 transition-colors hover:text-bronze"
+              >
                 {business.address.slice(0, 4).join(', ')},{' '}
                 {business.address[4]}
-              </p>
+              </a>
               {/* Contact details are placeholders until provided. */}
               <a
                 href={`https://wa.me/${business.phone.replace(/\D/g, '')}?text=${encodeURIComponent('Hello NRK STONES, I would like to make an enquiry.')}`}
