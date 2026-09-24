@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { business } from '@/lib/content'
 import { LineReveal, Reveal } from '@/components/reveal'
 import { MagneticButton } from '@/components/magnetic-button'
+import { Mail, MessageCircle } from 'lucide-react'
 
 const fields = [
   { name: 'name', label: 'Name', type: 'text', required: true },
@@ -96,19 +97,23 @@ export function Contact() {
               </p>
               {/* Contact details are placeholders until provided. */}
               <a
-                href={`https://wa.me/${business.phone.replace(/\D/g, '')}`}
+                href={`https://wa.me/${business.phone.replace(/\D/g, '')}?text=${encodeURIComponent('Hello NRK STONES, I would like to make an enquiry.')}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block text-ivory/40 transition-colors hover:text-bronze"
               >
-              {business.phone || 'Phone — to be added'}
+                <MessageCircle size={16} />
+                <span>{business.phone || 'Phone — to be added'}</span>
               </a>
 
               <a
-                href={`mailto:${business.email}`}
+                href={`https://mail.google.com/mail/?view=cm&fs=1&to=${business.email}&su=${encodeURIComponent('Website Enquiry – NRK STONES')}`}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="block text-ivory/40 transition-colors hover:text-bronze"
               >
-              {business.email || 'Email — to be added'}
+                <Mail size={16} />
+                <span>{business.email || 'Email — to be added'}</span>
               </a>
             </div>
           </Reveal>
