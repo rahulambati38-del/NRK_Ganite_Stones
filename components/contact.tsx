@@ -172,7 +172,7 @@ export function Contact() {
                   htmlFor="message"
                   className="pointer-events-none absolute left-0 top-6 text-sm text-ivory/50 transition-all duration-300 peer-focus:top-0 peer-focus:text-[11px] peer-focus:uppercase peer-focus:tracking-[0.2em] peer-focus:text-bronze peer-[:not(:placeholder-shown)]:top-0 peer-[:not(:placeholder-shown)]:text-[11px] peer-[:not(:placeholder-shown)]:uppercase peer-[:not(:placeholder-shown)]:tracking-[0.2em] peer-[:not(:placeholder-shown)]:text-ivory/60"
                 >
-                  Message
+                  Message <span className="text-bronze">*</span>
                 </label>
               </div>
 
