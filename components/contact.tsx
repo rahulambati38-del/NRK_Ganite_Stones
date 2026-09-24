@@ -6,6 +6,7 @@ import { LineReveal, Reveal } from '@/components/reveal'
 import { MagneticButton } from '@/components/magnetic-button'
 import { Mail, MessageCircle } from 'lucide-react'
 
+
 const fields = [
   { name: 'name', label: 'Name', type: 'text', required: true },
   { name: 'phone', label: 'Phone', type: 'tel', required: true, pattern: '[0-9]{10}', minLength: 10, maxLength: 10 },
