@@ -10,12 +10,12 @@ const fields = [
   { name: 'name', label: 'Name', type: 'text', required: true },
   { name: 'phone', label: 'Phone', type: 'tel', required: true },
   { name: 'email', label: 'Email', type: 'email', required: false },
-  { name: 'projectType', label: 'Project Type', type: 'text', required: false },
+  { name: 'projectType', label: 'Project Type', type: 'text', required: true },
   {
     name: 'requirement',
     label: 'Stone Requirement',
     type: 'text',
-    required: false,
+    required: true,
   },
 ] as const
 
@@ -164,6 +164,7 @@ export function Contact() {
                   id="message"
                   name="message"
                   rows={4}
+                  required
                   placeholder=" "
                   className="peer w-full resize-none border-b border-ivory/20 bg-transparent pb-2 pt-6 text-ivory outline-none transition-colors focus:border-bronze"
                 />
