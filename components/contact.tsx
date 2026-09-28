@@ -74,7 +74,7 @@ export function Contact() {
           <Reveal>
             <p className="mb-6 flex items-center gap-3 text-[11px] uppercase tracking-[0.3em] text-bronze">
               <span className="inline-block h-px w-8 bg-bronze" />
-              08 — Enquiry
+              07 — Enquiry
             </p>
           </Reveal>
           <h2 className="font-serif text-[clamp(2rem,4.5vw,3.5rem)] font-medium leading-[1.05]">
