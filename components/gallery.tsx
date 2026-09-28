@@ -52,7 +52,7 @@ export function Gallery() {
             <Reveal>
               <p className="mb-6 flex items-center gap-3 text-[11px] uppercase tracking-[0.3em] text-bronze">
                 <span className="inline-block h-px w-8 bg-bronze" />
-                06 — Gallery
+                05 — Gallery
               </p>
             </Reveal>
             <Reveal delay={0.1}>
