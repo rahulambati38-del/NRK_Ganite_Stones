@@ -13,7 +13,7 @@ export function Location() {
           <Reveal>
             <p className="mb-6 flex items-center gap-3 text-[11px] uppercase tracking-[0.3em] text-bronze">
               <span className="inline-block h-px w-8 bg-bronze" />
-              07 — Visit
+              06 — Visit
             </p>
           </Reveal>
           <Reveal delay={0.1}>
