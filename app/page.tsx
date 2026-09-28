@@ -6,7 +6,6 @@ import { Marquee } from '@/components/marquee'
 import { Applications } from '@/components/applications'
 import { StorySection } from '@/components/story-section'
 import { WhyNRK } from '@/components/why-nrk'
-import { StoneExplorer } from '@/components/stone-explorer'
 import { Gallery } from '@/components/gallery'
 import { Location } from '@/components/location'
 import { Contact } from '@/components/contact'
@@ -26,7 +25,6 @@ export default function Page() {
         <Applications />
         <StorySection />
         <WhyNRK />
-        <StoneExplorer />
         <Gallery />
         <Location />
         <Contact />
